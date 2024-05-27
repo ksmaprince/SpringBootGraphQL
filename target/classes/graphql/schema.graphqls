@@ -1,0 +1,38 @@
+type Query {
+    bookById(id: ID): Book
+    allPosts : PostContentDTO
+    getPosts(PostId: Float) : PostContentDTO
+}
+
+type Book {
+    id: ID
+    name: String
+    pageCount: Int
+    author: Author
+}
+
+type Author {
+    id: ID
+    firstName: String
+    lastName: String
+}
+
+type PostContentDTO{
+    statusCode : Int!
+    totalRecord : Int!
+    postList : [PostDTO]
+}
+
+type PostDTO{
+    id : Float
+    name : String
+    content : String
+    noOfLikes : Int
+    isDisplay : Boolean
+    comments : [PostCommentsDTO]
+}
+
+type PostCommentsDTO{
+    id : Float
+    commentContent : String
+}
